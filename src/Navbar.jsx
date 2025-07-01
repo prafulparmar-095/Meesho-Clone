@@ -1,9 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaShoppingCart, FaUserAlt } from 'react-icons/fa';
+import Dropdown from './dropdown';
+
+const categoryData = {
+  "Women Ethnic": {
+    "Sarees": ["Silk Sarees", "Cotton Sarees", "Georgette Sarees", "Chiffon Sarees"],
+    "Kurtis": ["Anarkali", "Straight Kurtis", "Printed Kurtis", "Designer Kurtis"],
+    "Dress Materials": ["Unstitched", "Semi-Stitched", "Stitched Sets"]
+  },
+  "Women Western": {
+    "Tops": ["Crop Tops", "Blouses", "Tunics"],
+    "Dresses": ["Maxi Dresses", "Mini Dresses", "Bodycon"],
+    "Bottomwear": ["Jeans", "Trousers", "Shorts"]
+  },
+  "Men": {
+    "Top Wear": ["T-Shirts", "Shirts", "Jackets"],
+    "Bottom Wear": ["Jeans", "Trousers", "Track Pants"],
+    "Ethnic": ["Kurta Pyjama", "Sherwani", "Nehru Jackets"]
+  },
+  "Kids": {
+    "Boys Clothing": ["Shirts", "T-Shirts", "Pants"],
+    "Girls Clothing": ["Dresses", "Frocks", "Leggings"]
+  },
+  "Home & Kitchen": {
+    "Home Decor": ["Wall Stickers", "Clocks", "Lamps"],
+    "Kitchen": ["Cookware", "Storage", "Dinner Sets"],
+    "Furnishing": ["Bedsheets", "Curtains", "Pillows"]
+  },
+  "Beauty & Health": {
+    "Makeup": ["Lipsticks", "Kajal", "Foundations"],
+    "Health": ["Supplements", "Fitness Equipment"]
+  },
+  "Jewellery": {
+    "Necklaces": ["Gold Plated", "Oxidised", "Temple Jewellery"],
+    "Earrings": ["Studs", "Jhumkas", "Hoops"]
+  },
+  "Bags & Footwear": {
+    "Bags": ["Handbags", "Backpacks", "Clutches"],
+    "Footwear": ["Flats", "Heels", "Sandals"]
+  },
+  "Electronics": {
+    "Mobiles": ["Smartphones", "Feature Phones"],
+    "Accessories": ["Headphones", "Chargers", "Cables"]
+  },
+  "Sports & Fitness": {
+    "Fitness": ["Yoga", "Hand Grip Strengthener", "Tummy Trimmers", "Skipping Ropes", "Sweat Belts"],
+    "Sports": ["Badminton", "Skating", "Football", "Cricket"]
+  },
+  "Car & Motorbike": {
+    "Car Accessories": ["Car Covers", "Interior Accessories", "Car Mobile Holders", "Car Repair Assistance"],
+    "Motorbike Accessories": ["Helmets", "Bike Accessories", "Bike LED Lights", "Safety Gear & Clothing"]
+  },
+  "Office": {
+    "Office Supplies & Stationery": ["Diaries & Notebooks", "Adhesive & Notebooks", "Files & Desk Organizers", "Pen & Pencils", "Paintings & Photoframes"]
+  }
+};
 
 const Navbar = () => {
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+
   return (
     <div>
+      {/* Top Navigation Bar */}
       <nav className="flex items-center justify-between px-10 py-3 bg-white shadow-md">
         <div className="text-2xl font-bold text-pink-600">Meesho</div>
 
@@ -29,22 +87,25 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <nav className="bg-gray-100 px-10 py-4 overflow-x-auto text-center">
-        <ul className="flex list-none m-0 p-0 gap-5 whitespace-nowrap justify-center">
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Women Ethnic</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Women Western</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Men</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Kids</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Home & Kitchen</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Beauty & Health</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Jewellery</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Bags & Footwear</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Electronics</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Sports & Fitness</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Car & Motorbike</li>
-          <li className="cursor-pointer text-sm text-gray-700 hover:text-pink-600">Office</li>
+      {/* Category Bar */}
+      <div className="relative bg-gray-100 px-10 py-4" onMouseLeave={() => setHoveredCategory(null)}>
+        <ul className="flex gap-10 font-bold justify-center">
+          {Object.keys(categoryData).map((category) => (
+            <li
+              key={category}
+              onMouseEnter={() => setHoveredCategory(category)}
+              className="relative text-sm text-gray-700 hover:text-pink-600 cursor-pointer"
+            >
+              {category}
+              {hoveredCategory === category && (
+                <div className="absolute left-0 w-full">
+                  <Dropdown subcategories={categoryData[category]} />
+                </div>
+              )}
+            </li>
+          ))}
         </ul>
-      </nav>
+      </div>
     </div>
   );
 };
