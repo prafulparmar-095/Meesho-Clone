@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Banner from './Banner';
 import InfoBanner from './InfoBanner';
 import ProductPage from './ProductPage';
+import CategoryBanner from './CategoryBanner';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <>
             <Banner />
             <InfoBanner />
+            <CategoryBanner /> 
           </>
         } />
         <Route path="/products/:subcategory" element={<ProductPage />} />
