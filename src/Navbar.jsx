@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaShoppingCart, FaUserAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import Dropdown from './dropdown';
 
 const categoryData = {
@@ -75,11 +76,14 @@ const Navbar = () => {
 
         <div className="flex items-center gap-6 text-sm">
           <a href="#" className="text-gray-700 hover:text-pink-600">Download App</a>
-          <a href="#" className="text-gray-700 hover:text-pink-600">Become a Supplier</a>
-          <div className="flex flex-col items-center cursor-pointer hover:text-pink-600">
-            <FaUserAlt className="text-xl" />
-            <span>Profile</span>
-          </div>
+          <Link to="/register" className="text-gray-700 hover:text-pink-600">Become a Supplier</Link>
+          
+          
+<Link to="/login" className="flex flex-col items-center cursor-pointer hover:text-pink-600">
+  <FaUserAlt className="text-xl" />
+  <span>Profile</span>
+</Link>
+
           <div className="flex flex-col items-center cursor-pointer hover:text-pink-600">
             <FaShoppingCart className="text-xl" />
             <span>Cart</span>
