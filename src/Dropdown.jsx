@@ -1,4 +1,5 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Dropdown = ({ subcategories }) => {
   return (
@@ -9,7 +10,7 @@ const Dropdown = ({ subcategories }) => {
           <ul>
             {items.map((item) => (
               <li key={item} className="text-gray-700 hover:text-pink-600 cursor-pointer text-xs py-1">
-                {item}
+                <Link to={`/products/${encodeURIComponent(item)}`}>{item}</Link>
               </li>
             ))}
           </ul>
@@ -18,5 +19,9 @@ const Dropdown = ({ subcategories }) => {
     </div>
   );
 };
+Dropdown.propTypes = {
+  subcategories: PropTypes.object.isRequired,
+};
 
 export default Dropdown;
+
