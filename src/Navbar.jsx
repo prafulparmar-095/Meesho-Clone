@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaShoppingCart, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Dropdown from './dropdown';
+import Dropdown from './Dropdown';
 
 const categoryData = {
   "Women Ethnic": {
@@ -97,7 +97,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Category Bar */}
+      {/* Category Bar //*/}
       <div className="relative bg-gray-100 px-10 py-4" onMouseLeave={() => setHoveredCategory(null)}>
         <ul className="flex gap-10 font-bold justify-center">
           {Object.keys(categoryData).map((category) => (

@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 
 
@@ -6,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 
 
+=======
+//tasmeen quraishi
+>>>>>>> bcaa9cbec742276105b1e96979de6132adb8d387
 const products = [
 
     { id:1, name:"Blue Printed Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2017/07/31/11/23/people-2557417_1280.jpg", price:"₹1,299", color:"Blue" },

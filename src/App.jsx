@@ -36,11 +36,9 @@ function App() {
         <Route path="/products" element={<AllProducts/>} />
             <Route path="/buy" element={<BuyPage />} />
     <Route path="/address" element={<AddressPage />} />
-
-
       </Routes>
     </>
   );
 }
-
+//jj
 export default App;
