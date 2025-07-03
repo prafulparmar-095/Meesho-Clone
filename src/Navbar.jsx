@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaShoppingCart, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Dropdown from './dropdown';
+import Dropdown from './Dropdown';
 
 const categoryData = {
   "Women Ethnic": {

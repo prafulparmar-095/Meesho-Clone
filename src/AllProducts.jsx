@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+//tasmeen quraishi
 const products = [
 
     { id:1, name:"Blue Printed Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2017/07/31/11/23/people-2557417_1280.jpg", price:"₹1,299", color:"Blue" },
