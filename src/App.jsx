@@ -8,6 +8,7 @@ import Register from './Register';
 import Login from './Login';
 import UserRegister from './UserRegister';
 import CategoryBanner from './CategoryBanner';
+import AllProducts from './AllProducts';
 
 
 
@@ -30,6 +31,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/user-register" element={<UserRegister />} />
+        <Route path="/products" element={<AllProducts/>} />
+
 
       </Routes>
     </>

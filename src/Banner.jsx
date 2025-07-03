@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
@@ -9,9 +10,13 @@ const Banner = () => {
       <div className="max-w-md text-right">
         <h2 className="text-4xl font-bold mb-2">Smart Shopping</h2>
         <h3 className="text-3xl mb-5">Trusted by Millions</h3>
-        <button className="px-6 py-3 bg-white text-purple-700 font-bold border-none rounded-lg cursor-pointer transition duration-300 ease-in-out hover:bg-gray-100">
-          Shop Now
-        </button>
+<Link
+  to="/products"
+  className="mt-4 inline-block bg-pink-600 text-white px-6 py-2 rounded hover:bg-pink-700"
+>
+  Shop Now
+</Link>
+
       </div>
     </div>
   );
