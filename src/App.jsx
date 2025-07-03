@@ -9,6 +9,8 @@ import Login from './Login';
 import UserRegister from './UserRegister';
 import CategoryBanner from './CategoryBanner';
 import AllProducts from './AllProducts';
+import BuyPage from './BuyPage';
+import AddressPage from './AddressPage';
 
 
 
@@ -32,6 +34,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/user-register" element={<UserRegister />} />
         <Route path="/products" element={<AllProducts/>} />
+            <Route path="/buy" element={<BuyPage />} />
+    <Route path="/address" element={<AddressPage />} />
 
 
       </Routes>

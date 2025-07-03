@@ -1,5 +1,10 @@
-
 import React from 'react';
+import { useNavigate } from "react-router-dom";
+
+
+  
+
+
 
 const products = [
 
@@ -87,10 +92,13 @@ const products = [
   ]
 
 
-  
 
 
 export default function AllProducts() {
+  const navigate = useNavigate();
+const handleBuy = (product) => {
+  navigate("/buy", { state: product });
+};
   return (
     <div className="p-10">
       <h2 className="text-2xl font-bold mb-6">Explore All Products</h2>
@@ -102,7 +110,7 @@ export default function AllProducts() {
             <p className="text-gray-700">Price: {product.price}</p>
             <p className="text-gray-600">Color: {product.color}</p>
             <div className="flex gap-4 mt-3">
-              <button className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Buy</button>
+              <button onClick={() => handleBuy(product)} className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Buy</button>
               <button className="border border-pink-600 text-pink-600 px-4 py-2 rounded hover:bg-pink-50">Cart</button>
             </div>
           </div>
