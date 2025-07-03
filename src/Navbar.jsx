@@ -64,7 +64,13 @@ const Navbar = () => {
     <div>
       {/* Top Navigation Bar */}
       <nav className="flex items-center justify-between px-10 py-3 bg-white shadow-md">
-        <div className="text-2xl font-bold text-pink-600">Meesho</div>
+    
+        <Link to="/" className="text-2xl font-bold text-pink-600">Meesho</Link>
+
+
+      
+
+
 
         <div className="flex-grow max-w-2xl mx-8">
           <input
