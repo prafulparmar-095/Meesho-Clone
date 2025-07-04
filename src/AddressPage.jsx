@@ -88,7 +88,7 @@ export default function AddressPage() {
               value={address.city}
               onChange={handleChange}
               className="w-full border p-2 rounded"
-              placeholder="e.g. Bihar"
+              placeholder="e.g. Muzaffarpur"
               required
             />
           </div>
@@ -101,7 +101,7 @@ export default function AddressPage() {
               value={address.state}
               onChange={handleChange}
               className="w-full border p-2 rounded"
-              placeholder="e.g. Delhi"
+              placeholder="e.g. Bihar"
               required
             />
           </div>
