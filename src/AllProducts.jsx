@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 //tasmeen quraishi
 const products = [
 
-    { id:1, name:"Blue Printed Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2017/07/31/11/23/people-2557417_1280.jpg", price:"₹1,299", color:"Blue" },
-    { id:2, name:"Black & Brown Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2016/10/13/09/53/woman-1737254_1280.jpg", price:"₹1,399", color:"Black/Brown" },
-    { id:3, name:"Zig-Zag Blue Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2021/05/21/08/19/indian-6277177_1280.jpg", price:"₹1,099", color:"Blue" },
-    { id:4, name:"Peach Georgette Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2018/05/02/23/16/woman-3366434_1280.jpg", price:"₹1,499", color:"Peach" },
+    { id:1, name:"Blue Printed Anarkali Kurti", image:"https://i.pinimg.com/736x/f2/27/9b/f2279ba2d15f5de99c3537d7e76b70c9.jpg", price:"₹1,299", color:"Blue" },
+    { id:2, name:"Black & Brown Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2022/01/21/10/17/anarkali-kurta-6954377_1280.jpg", price:"₹1,399", color:"Black/Brown" },
+    { id:3, name:"Zig-Zag Blue Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2022/01/21/11/04/anarkali-kurta-6954528_1280.jpg", price:"₹1,099", color:"Blue" },
+    { id:4, name:"Peach Georgette Anarkali Kurti", image:"https://cdn.pixabay.com/photo/2022/01/21/11/36/anarkali-kurta-6954569_1280.jpg", price:"₹1,499", color:"Peach" },
     { id:5, name:"White Embroidered Kurti", image:"https://cdn.pixabay.com/photo/2019/02/10/08/29/baby-3984479_1280.jpg", price:"₹1,099", color:"White" },
     { id:6, name:"Green Floral Readymade Kurta", image:"https://cdn.pixabay.com/photo/2018/02/10/19/09/girl-3143021_1280.jpg", price:"₹1,199", color:"Green" },
     { id:7, name:"Pink A-line Kurti", image:"https://cdn.pixabay.com/photo/2018/02/01/03/08/girl-3121791_1280.jpg", price:"₹1,249", color:"Pink" },
