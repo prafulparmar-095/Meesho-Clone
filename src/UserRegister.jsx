@@ -9,6 +9,7 @@ const UserRegister = () => {
     password: '',
   });
 
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
