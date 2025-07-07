@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const UserRegister = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +8,6 @@ const UserRegister = () => {
     phone: '',
     password: '',
   });
-
 
   const navigate = useNavigate();
 
@@ -19,52 +18,72 @@ const UserRegister = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('User Registered:', formData);
-    alert('User Registered Successfully!');
-    // You can store in Firebase here
-    navigate('/login');
+    alert('User Registered Successfully! (This is a dummy registration)');
+    // TODO: You can integrate with Firebase or a backend API here for real user registration
+    navigate('/login'); // Navigate to login after dummy registration
   };
 
   return (
-    <div className="min-h-screen bg-pink-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-pink-50 flex items-center justify-center px-4 py-10">
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6 text-pink-600">User Registration</h2>
-        
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          onChange={handleChange}
-          className="w-full p-2 mb-4 border border-gray-300 rounded"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-          className="w-full p-2 mb-4 border border-gray-300 rounded"
-          required
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone"
-          onChange={handleChange}
-          className="w-full p-2 mb-4 border border-gray-300 rounded"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          className="w-full p-2 mb-6 border border-gray-300 rounded"
-          required
-        />
+        <h2 className="text-3xl font-bold text-center mb-8 text-pink-600">User Registration</h2>
+
+        <div className="mb-4">
+          <label htmlFor="userName" className="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+          <input
+            type="text"
+            id="userName"
+            name="name"
+            placeholder="Your Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="userEmail" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
+          <input
+            type="email"
+            id="userEmail"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="userPhone" className="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+          <input
+            type="tel" // Use type="tel" for phone numbers
+            id="userPhone"
+            name="phone"
+            placeholder="Your Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            required
+          />
+        </div>
+        <div className="mb-6">
+          <label htmlFor="userPassword" className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+          <input
+            type="password"
+            id="userPassword"
+            name="password"
+            placeholder="Create a password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            required
+          />
+        </div>
 
         <button
           type="submit"
-          className="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700"
+          className="w-full bg-pink-600 text-white py-3 rounded-md hover:bg-pink-700 text-lg font-semibold transition duration-200"
         >
           Register
         </button>
@@ -72,9 +91,9 @@ const UserRegister = () => {
         {/* Optional Login Link */}
         <p className="mt-6 text-center text-sm text-gray-600">
           Already have an account?{' '}
-          <a href="/login" className="text-pink-600 font-medium hover:underline">
+          <Link to="/login" className="text-pink-600 hover:underline font-semibold">
             Login here
-          </a>
+          </Link>
         </p>
       </form>
     </div>

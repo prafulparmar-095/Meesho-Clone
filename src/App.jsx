@@ -11,9 +11,12 @@ import CategoryBanner from './CategoryBanner';
 import AllProducts from './AllProducts';
 import BuyPage from './BuyPage';
 import AddressPage from './AddressPage';
-
-
-
+import Footer from './Footer';
+import GoldBanner from './GoldBanner';
+import OriginalBrands from './OriginalBrands';
+import BrandCarousel from './BrandCarousel';
+import TrendzBanner from './TrendzBanner';
+import CategoryCircles from './CategoryCircles';
 
 
 function App() {
@@ -25,7 +28,13 @@ function App() {
           <>
             <Banner />
             <InfoBanner />
-            <CategoryBanner /> 
+            <CategoryBanner />
+            <GoldBanner />
+            <OriginalBrands />
+            <BrandCarousel />
+            <TrendzBanner />
+            <CategoryCircles />
+            <Footer />
           </>
         } />
 
@@ -34,11 +43,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/user-register" element={<UserRegister />} />
         <Route path="/products" element={<AllProducts/>} />
-            <Route path="/buy" element={<BuyPage />} />
-    <Route path="/address" element={<AddressPage />} />
+        <Route path="/buy" element={<BuyPage />} />
+        <Route path="/address" element={<AddressPage />} />
       </Routes>
     </>
   );
 }
-//jj
+
 export default App;

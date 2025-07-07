@@ -1,3 +1,4 @@
+// src/components/CategoryBanner.jsx
 import React from 'react';
 
 const categories = [
@@ -26,25 +27,30 @@ const categories = [
     image: 'https://images.meesho.com/images/marketing/1744634871107.webp',
   },
   {
-    name: 'Accessorie',
+    name: 'Accessories',
     image: 'https://images.meesho.com/images/marketing/1744634909968.webp',
+  },
+  {
+    name:'Grocery',
+    image: 'https://images.meesho.com/images/marketing/1744634937295.webp'
   },
 ];
 
 const CategoryBanner = () => {
   return (
-    <div className="bg-pink-50 py-6">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center">
+    <div className="bg-pink-50 py-6"> {/* The light pink background */}
+      {/* Horizontal scrollable container */}
+      <div className="max-w-full mx-auto px-4 flex flex-nowrap overflow-x-auto justify-center items-center space-x-6 pb-4">
         {categories.map((cat, idx) => (
-          <div key={idx} className="flex flex-col items-center space-y-2">
-            <div className="w-28 h-28 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden transform transition duration-300 hover:scale-110">
+          <div key={idx} className="flex-none flex flex-col items-center">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md flex items-center justify-center">
               <img
                 src={cat.image}
                 alt={cat.name}
-                className="object-cover h-full w-full"
+                className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-sm font-medium text-gray-800">{cat.name}</p>
+            <p className="mt-2 text-sm font-medium text-gray-800">{cat.name}</p>
           </div>
         ))}
       </div>
